@@ -44,6 +44,7 @@ public class LoginFrag extends Fragment {
         edtPass =(EditText) view.findViewById(R.id.edtPassword);
         BtnLog = (Button) view.findViewById(R.id.btnlog);
 
+
         BtnLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
