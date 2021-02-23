@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Umutekano">
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".MainActivity"
+        <activity android:name=".Citizen"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

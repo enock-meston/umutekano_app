@@ -37,30 +37,7 @@
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textViewusername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="UserName"
-                android:textColor="@color/black" />
-
-            <EditText
-                android:id="@+id/edtUsername"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="UserName"
-                android:inputType="textPersonName"
-                android:maxLength="16"
-                android:text="" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,23 +45,22 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textViewPass"
+                android:id="@+id/textViewid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Password"
+                android:text="INDANGAMUNTU"
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/edtPassword"
+                android:id="@+id/edtidnumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Enter Password"
-                android:inputType="textPassword"
-                android:maxLength="16"
-                android:text="" />
+                android:hint="INJIZA NUMERO Y'INDANGAMUNTU"
+                android:inputType="numberDecimal"
+                android:maxLength="16" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Help?"
+                android:text="Ubufasha?"
                 android:textColor="@color/blue" />
 
             <Button
@@ -105,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Login"
+                android:text="INJIRA"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
