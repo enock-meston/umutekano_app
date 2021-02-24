@@ -58,10 +58,19 @@ AlertDialog.Builder builder;
         edt_id_number =(EditText) view.findViewById(R.id.edtidnumber);
         BtnLog = (Button) view.findViewById(R.id.btnlog);
         builder = new AlertDialog.Builder(getActivity());
+        //        progressBar
+        myProgress = new ProgressDialog(getActivity());
+        myProgress.setTitle("Processing...");
+        myProgress.setMessage("Please wait...");
+        myProgress.setCancelable(false);
+        myProgress.setIndeterminate(true);
+
+//        /// button
+
         BtnLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                myProgress.show();
                 ID_NO = edt_id_number.getText().toString();
 //                check if id is valid
                 if (ID_NO.equals("")){
@@ -72,14 +81,17 @@ AlertDialog.Builder builder;
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, LgLink, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+                            myProgress.dismiss();
                             try {
                                 JSONArray jsonArray=new JSONArray(response);
                                 JSONObject jsonObject = jsonArray.getJSONObject(0);
                                 String code = jsonObject.getString("code");
 
                                 if (code.equals("login_failed")){
+                                    myProgress.dismiss();
                                     builder.setTitle("Login Error...");
                                     displayAlert(jsonObject.getString("message"));
+                                    myProgress.dismiss();
                                 }else{
                                     //Intent intent = new Intent(getActivity(), Citizen.class);
                                     Intent intent = new Intent(getActivity(), Citizen.class);
@@ -100,9 +112,11 @@ AlertDialog.Builder builder;
 
                                 }
                             } catch (JSONException e) {
+                                myProgress.dismiss();
                                 builder.setTitle("IKOSA");
                                 displayAlert("INDANGAMUNTU NTAGO IZWI....");
                                 Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+                                myProgress.dismiss();
                                 e.printStackTrace();
                             }
 
@@ -112,7 +126,9 @@ AlertDialog.Builder builder;
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-
+                            Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                            error.printStackTrace();
+                            myProgress.dismiss();
                         }
                     })
                     {
