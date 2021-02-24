@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    tool:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/ic_baseline_payment"
+            android:title="Payments" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_baseline_person"
+            android:title="Profile" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_aboutUlk"
+                android:icon="@drawable/ic_baseline_help"
+                android:title="About ULK" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share"
+                android:title="SHARE" />
+
+            <item
+                android:id="@+id/nav_contuct"
+                android:icon="@drawable/ic_baseline_contact_support"
+                android:title="CONTACT US" />
+        </menu>
+    </item>
+</menu>
