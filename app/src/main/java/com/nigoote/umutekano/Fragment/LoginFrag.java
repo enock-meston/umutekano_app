@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,7 @@ public class LoginFrag extends Fragment {
     EditText edt_id_number;
     Button BtnLog;
     String ID_NO;
+    private String stringOfNames;
 //    private android.app.AlertDialog.Builder builder;
 AlertDialog.Builder builder;
     private ProgressDialog myProgress;
@@ -79,20 +81,26 @@ AlertDialog.Builder builder;
                                     builder.setTitle("Login Error...");
                                     displayAlert(jsonObject.getString("message"));
                                 }else{
+                                    //Intent intent = new Intent(getActivity(), Citizen.class);
                                     Intent intent = new Intent(getActivity(), Citizen.class);
                                     Bundle bundle = new Bundle();
                                     bundle.putString("names",jsonObject.getString("names"));
 
-                                    HomeFragement fragment = new HomeFragement();
-                                    bundle.putString("names",jsonObject.getString("names"));
-                                    fragment.setArguments(bundle);
+//                                    HomeFragement fragment = new HomeFragement();
+//                                    bundle.putString("names",jsonObject.getString("names"));
+//                                    fragment.setArguments(bundle);
 
+//                                    Log.d("enoc",fragment.getArguments().getString("names"));
                                     intent.putExtras(bundle);
-
                                     startActivity(intent);
+
+                                    clear();
+                                    getActivity().finish(); // finishing activity
+
+
                                 }
                             } catch (JSONException e) {
-                                builder.setTitle("Error");
+                                builder.setTitle("IKOSA");
                                 displayAlert("INDANGAMUNTU NTAGO IZWI....");
                                 Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
@@ -141,4 +149,10 @@ AlertDialog.Builder builder;
         alertDialog.show();
     }
 //    end of error messages
+
+
+//    clear method
+public void clear(){
+    edt_id_number.setText("");
+}
 }

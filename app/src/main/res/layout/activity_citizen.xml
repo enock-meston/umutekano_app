@@ -6,4 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Citizen">
 
+    <TextView
+        android:id="@+id/namestxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="names"
+        android:textColor="@color/w2"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="340dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
