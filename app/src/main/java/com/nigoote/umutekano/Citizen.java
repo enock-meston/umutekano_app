@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 import com.nigoote.umutekano.Fragment.HomeFragement;
 import com.nigoote.umutekano.Fragment.PayFragement;
+import com.nigoote.umutekano.Fragment.StartFrag;
 
 import java.io.File;
 
@@ -67,8 +68,8 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
 //        rotation
         if (savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragement()).commit();
-            navigationView.setCheckedItem(R.id.nav_aboutUlk);
+                    new StartFrag()).commit();
+            navigationView.setCheckedItem(R.id.nav_start);
         }
 
 //        NAMES = (TextView) findViewById(R.id.namestxt);
@@ -90,11 +91,11 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
-//            case R.id.nav_payment:
-////                here has changes 01
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-//                        PayFragement.NewInstance(Well,regNumbers)).commit();
-//                break;
+            case R.id.nav_start:
+//                here has changes 01
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new StartFrag()).commit();
+                break;
             case R.id.nav_profile:
 //                here has changes 01
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

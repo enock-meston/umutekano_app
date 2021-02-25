@@ -2,4 +2,7 @@
     <string name="app_name">umutekano</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="startWords">Ubu ushobora kwishyura umusanzu wawe w`umutekano ku gihe kandi neza
+    koresha iyi sisiteme ubundi utange umusanzu wawe.
+    Dutange umusanzu neza kandi ku gihe!</string>
 </resources>
