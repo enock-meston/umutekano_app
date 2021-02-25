@@ -98,9 +98,11 @@ AlertDialog.Builder builder;
                                     Bundle bundle = new Bundle();
                                     bundle.putString("names",jsonObject.getString("names"));
 
-//                                    HomeFragement fragment = new HomeFragement();
-//                                    bundle.putString("names",jsonObject.getString("names"));
-//                                    fragment.setArguments(bundle);
+                                    HomeFragement fragment = new HomeFragement();
+                                    bundle.putString("names",jsonObject.getString("names"));
+                                    bundle.putString("pho1",jsonObject.getString("phone"));
+                                    bundle.putString("id1",jsonObject.getString("idno"));
+                                    fragment.setArguments(bundle);
 
 //                                    Log.d("enoc",fragment.getArguments().getString("names"));
                                     intent.putExtras(bundle);
@@ -112,6 +114,7 @@ AlertDialog.Builder builder;
 
                                 }
                             } catch (JSONException e) {
+                                Log.d("enn","kuki"+e);
                                 myProgress.dismiss();
                                 builder.setTitle("IKOSA");
                                 displayAlert("INDANGAMUNTU NTAGO IZWI....");

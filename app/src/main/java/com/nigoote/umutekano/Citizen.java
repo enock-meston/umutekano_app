@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -24,9 +25,9 @@ import java.io.File;
 public class Citizen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
-    TextView names;
+    TextView names,phone,id1;
     View hview;
-    private String stringOfNames;
+    private String stringOfNames,stringOfId,stringOfPhone;
 
 //    TextView NAMES;
 //    String _names;
@@ -42,8 +43,20 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
         NavigationView navigationView = findViewById(R.id.nav_view);
 //        access header
         hview = navigationView.getHeaderView(0);
-
         names = (TextView) hview.findViewById(R.id.txtNames);
+
+        Bundle bundle = getIntent().getExtras();
+       if (bundle !=null){
+           stringOfNames = bundle.getString("names");
+           stringOfPhone = bundle.getString("pho1");
+           stringOfId = bundle.getString("id1");
+       }else{
+           stringOfNames = "bunble is null";
+           stringOfPhone = "bunble is null number phone";
+           stringOfId = "bundle is null id";
+       }
+
+
 
         navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,
@@ -85,7 +98,7 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
             case R.id.nav_profile:
 //                here has changes 01
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        HomeFragement.NewInstance(stringOfNames)).commit();
+                        HomeFragement.NewInstance(stringOfNames,stringOfPhone,stringOfId)).commit();
                 break;
 
             case R.id.nav_share:
