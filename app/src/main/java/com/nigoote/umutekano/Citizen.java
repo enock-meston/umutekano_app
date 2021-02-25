@@ -101,6 +101,7 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
                         HomeFragement.NewInstance(stringOfNames,stringOfPhone,stringOfId)).commit();
                 break;
 
+
             case R.id.nav_share:
                 ApplicationInfo api = getApplicationContext().getApplicationInfo();
                 String apkpath = api.sourceDir;
