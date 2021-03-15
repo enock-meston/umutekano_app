@@ -39,6 +39,7 @@ import java.util.Map;
 public class LoginFrag extends Fragment {
 
     private static final String LgLink ="http://192.168.56.1/umutekano/android/login.php";
+
     TextView txtHelp;
     EditText edt_id_number;
     Button BtnLog;
@@ -76,6 +77,7 @@ AlertDialog.Builder builder;
                 if (ID_NO.equals("")){
                     builder.setTitle("Something went wrong");
                     displayAlert("INJIZA  INDANGAMUNTU NYAYO");
+                    myProgress.dismiss();
                 }else{
                     RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, LgLink, new Response.Listener<String>() {
@@ -104,7 +106,7 @@ AlertDialog.Builder builder;
                                     bundle.putString("id1",jsonObject.getString("idno"));
                                     fragment.setArguments(bundle);
 
-//                                    Log.d("enoc",fragment.getArguments().getString("names"));
+                                    Log.d("enoc1",fragment.getArguments().getString("names"));
                                     intent.putExtras(bundle);
                                     startActivity(intent);
 

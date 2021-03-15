@@ -7,6 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="w2">#ED4009</color>
-    <color name="blue">#0037FF</color>
+    <color name="colorPrimary">#0381FE</color>
+    <color name="colorPrimaryDark">#0072DE</color>
+    <color name="colorAccent">#ff1744</color>
+    <color name="w2">#ff1744</color>
+
+    <color name="colorBlack">#1E1E1E</color> <!-- We will no use the regular #000000 -->
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

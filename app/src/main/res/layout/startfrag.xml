@@ -3,44 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:layout_gravity="center">
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo_tr" />
+
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="275dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="118dp"
-        android:layout_marginEnd="52dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
         android:fontFamily="sans-serif-black"
-        android:text="@string/startWords"
+        android:text="Murakaza neza kuri Umutekano Fees Collect System"
         android:textAlignment="center"
-        android:textColor="@color/w2"
-        android:textSize="23sp"
+        android:textColor="#333"
+        android:textSize="25sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="118dp"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="-7dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="230dp"
-        app:srcCompat="@drawable/ic_baseline_check_24" />
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

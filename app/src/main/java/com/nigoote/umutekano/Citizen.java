@@ -65,6 +65,7 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
 //        rotation
         if (savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -83,9 +84,6 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
 //
 //        NAMES.setText(_names);
 
-
-
-
     }
 
     @Override
@@ -96,6 +94,14 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new StartFrag()).commit();
                 break;
+
+            case R.id.nav_payment:
+//                here has changes 01
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new PayFragement()).commit();
+
+                break;
+
             case R.id.nav_profile:
 //                here has changes 01
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -107,7 +113,7 @@ public class Citizen extends AppCompatActivity implements NavigationView.OnNavig
                 ApplicationInfo api = getApplicationContext().getApplicationInfo();
                 String apkpath = api.sourceDir;
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("cards.inkuge.com.ulkstudent");
+                intent.setType("cards.nigoote.com.ulkstudent");
                 intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
                 startActivity(Intent.createChooser(intent,"ShareVia"));
 //                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
